@@ -385,6 +385,222 @@
     }, {
       "bulletinLevel" : "WARN",
       "bundle" : {
+        "artifact" : "nifi-elasticsearch-client-service-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.3.0.4.3.2.0-89"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "nifi-elasticsearch-client-service-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.3.0.4.3.2.0-89"
+        },
+        "type" : "org.apache.nifi.elasticsearch.ElasticSearchClientService"
+      } ],
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "57fe2f28-2175-3fdd-a316-41fcb820daf2",
+      "name" : "ElasticSearchClientServiceImpl",
+      "properties" : {
+        "el-cs-suppress-nulls" : "always-suppress",
+        "el-cs-strict-deprecation" : "false",
+        "el-cs-http-hosts" : "#{elastic_url}",
+        "el-cs-charset" : "UTF-8",
+        "el-cs-send-meta-header" : "true",
+        "el-cs-enable-compression" : "false",
+        "el-cs-sniff-cluster-nodes" : "false",
+        "el-cs-sniffer-interval" : "5 mins",
+        "el-cs-sniffer-failure-delay" : "1 min",
+        "el-cs-node-selector" : "ANY",
+        "authorization-scheme" : "NONE",
+        "el-cs-sniff-failure" : "false",
+        "el-cs-sniffer-request-timeout" : "1 sec",
+        "el-cs-connect-timeout" : "5000",
+        "el-cs-socket-timeout" : "60000"
+      },
+      "propertyDescriptors" : {
+        "el-cs-suppress-nulls" : {
+          "displayName" : "Suppress Null/Empty Values",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "el-cs-suppress-nulls",
+          "sensitive" : false
+        },
+        "el-cs-strict-deprecation" : {
+          "displayName" : "Strict Deprecation",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "el-cs-strict-deprecation",
+          "sensitive" : false
+        },
+        "el-cs-http-hosts" : {
+          "displayName" : "HTTP Hosts",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "el-cs-http-hosts",
+          "sensitive" : false
+        },
+        "el-cs-run-as-user" : {
+          "displayName" : "Run As User",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "el-cs-run-as-user",
+          "sensitive" : false
+        },
+        "proxy-configuration-service" : {
+          "displayName" : "Proxy Configuration Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "proxy-configuration-service",
+          "sensitive" : false
+        },
+        "el-cs-charset" : {
+          "displayName" : "Charset",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "el-cs-charset",
+          "sensitive" : false
+        },
+        "jwt-shared-secret" : {
+          "displayName" : "JWT Shared Secret",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "jwt-shared-secret",
+          "sensitive" : true
+        },
+        "el-cs-send-meta-header" : {
+          "displayName" : "Send Meta Header",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "el-cs-send-meta-header",
+          "sensitive" : false
+        },
+        "el-cs-username" : {
+          "displayName" : "Username",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "el-cs-username",
+          "sensitive" : false
+        },
+        "el-cs-enable-compression" : {
+          "displayName" : "Enable Compression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "el-cs-enable-compression",
+          "sensitive" : false
+        },
+        "el-cs-sniff-cluster-nodes" : {
+          "displayName" : "Sniff Cluster Nodes",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "el-cs-sniff-cluster-nodes",
+          "sensitive" : false
+        },
+        "api-key" : {
+          "displayName" : "API Key",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "api-key",
+          "sensitive" : true
+        },
+        "el-cs-node-selector" : {
+          "displayName" : "Node Selector",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "el-cs-node-selector",
+          "sensitive" : false
+        },
+        "el-cs-sniff-failure" : {
+          "displayName" : "Sniff on Failure",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "el-cs-sniff-failure",
+          "sensitive" : false
+        },
+        "el-cs-sniffer-request-timeout" : {
+          "displayName" : "Sniffer Request Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "el-cs-sniffer-request-timeout",
+          "sensitive" : false
+        },
+        "el-cs-ssl-context-service" : {
+          "displayName" : "SSL Context Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "el-cs-ssl-context-service",
+          "sensitive" : false
+        },
+        "el-cs-oauth2-token-provider" : {
+          "displayName" : "OAuth2 Access Token Provider",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "el-cs-oauth2-token-provider",
+          "sensitive" : false
+        },
+        "el-cs-path-prefix" : {
+          "displayName" : "Path Prefix",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "el-cs-path-prefix",
+          "sensitive" : false
+        },
+        "api-key-id" : {
+          "displayName" : "API Key ID",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "api-key-id",
+          "sensitive" : false
+        },
+        "el-cs-sniffer-interval" : {
+          "displayName" : "Sniffer Interval",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "el-cs-sniffer-interval",
+          "sensitive" : false
+        },
+        "el-cs-sniffer-failure-delay" : {
+          "displayName" : "Sniffer Failure Delay",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "el-cs-sniffer-failure-delay",
+          "sensitive" : false
+        },
+        "el-cs-password" : {
+          "displayName" : "Password",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "el-cs-password",
+          "sensitive" : true
+        },
+        "authorization-scheme" : {
+          "displayName" : "Authorization Scheme",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "authorization-scheme",
+          "sensitive" : false
+        },
+        "el-cs-connect-timeout" : {
+          "displayName" : "Connect timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "el-cs-connect-timeout",
+          "sensitive" : false
+        },
+        "el-cs-socket-timeout" : {
+          "displayName" : "Read timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "el-cs-socket-timeout",
+          "sensitive" : false
+        }
+      },
+      "scheduledState" : "DISABLED",
+      "type" : "org.apache.nifi.elasticsearch.ElasticSearchClientServiceImpl"
+    }, {
+      "bulletinLevel" : "WARN",
+      "bundle" : {
         "artifact" : "nifi-record-serialization-services-nar",
         "group" : "org.apache.nifi",
         "version" : "2.3.0.4.3.2.0-89"
@@ -521,6 +737,7 @@
     "maxConcurrentTasks" : 1,
     "name" : "PCF",
     "outputPorts" : [ ],
+    "parameterContextName" : "POCEnv",
     "position" : {
       "x" : 0.0,
       "y" : 0.0
@@ -1262,7 +1479,10 @@
       }, {
         "backPressureDataSizeThreshold" : "1 GB",
         "backPressureObjectThreshold" : 10000,
-        "bends" : [ ],
+        "bends" : [ {
+          "x" : -32.0,
+          "y" : 224.0
+        } ],
         "componentType" : "CONNECTION",
         "destination" : {
           "comments" : "",
@@ -1331,7 +1551,7 @@
           "name" : "Funnel",
           "type" : "FUNNEL"
         },
-        "flowFileExpiration" : "0 sec",
+        "flowFileExpiration" : "36000 sec",
         "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
         "identifier" : "a84a6233-0425-3f56-8735-e3f204f5368a",
         "labelIndex" : 0,
@@ -1387,6 +1607,36 @@
         "destination" : {
           "comments" : "",
           "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
+          "id" : "66f585eb-e119-3d10-9225-dab9cd0a427f",
+          "name" : "Funnel",
+          "type" : "FUNNEL"
+        },
+        "flowFileExpiration" : "3600 sec",
+        "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
+        "identifier" : "63d67283-853f-3bd1-9924-7a8d27fe7ed8",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "original" ],
+        "source" : {
+          "comments" : "",
+          "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
+          "id" : "e8f5d875-6466-33cb-8959-9a510e45c04a",
+          "name" : "PutElasticsearchRecord",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 0
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "",
+          "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
           "id" : "e8f5d875-6466-33cb-8959-9a510e45c04a",
           "name" : "PutElasticsearchRecord",
           "type" : "PROCESSOR"
@@ -1417,6 +1667,14 @@
       "flowFileConcurrency" : "UNBOUNDED",
       "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
       "funnels" : [ {
+        "componentType" : "FUNNEL",
+        "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
+        "identifier" : "66f585eb-e119-3d10-9225-dab9cd0a427f",
+        "position" : {
+          "x" : -650.944681661779,
+          "y" : 261.52884126466813
+        }
+      }, {
         "componentType" : "FUNNEL",
         "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
         "identifier" : "e36a2a94-4329-35ee-8174-89d083725a3d",
@@ -1455,7 +1713,7 @@
         "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
         "height" : 264.0,
         "identifier" : "767070a6-ebb4-3c04-b0ce-c22456e673d0",
-        "label" : "Input : Flow file with json records\n\nProcess: \nImplement exception handling and retry \nKeep failed records for investigation\n\n\nOutput: Target System \n",
+        "label" : "Input : Flow file with json records\n\nProcess: \nImplement exception handling and retry \nKeep failed records for investigation\n- logic specific to elastic/target system\n\n\n\nOutput: Target System \n",
         "position" : {
           "x" : 424.0,
           "y" : -216.0
@@ -1576,6 +1834,7 @@
           "put-es-record-batch-size" : "100",
           "put-es-record-index-op" : "index",
           "put-es-output-error-responses" : "false",
+          "el-rest-client-service" : "57fe2f28-2175-3fdd-a316-41fcb820daf2",
           "put-es-record-log-error-responses" : "false",
           "put-es-not_found-is-error" : "true",
           "put-es-record-error-writer" : "5bce6a9c-c7cf-3c20-8e0f-d856be842b27",
@@ -1790,7 +2049,26 @@
   },
   "flowEncodingVersion" : "1.0",
   "latest" : false,
-  "parameterContexts" : { },
+  "parameterContexts" : {
+    "POCEnv" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "inheritedParameterContexts" : [ ],
+      "name" : "POCEnv",
+      "parameters" : [ {
+        "description" : "elastic index prefix",
+        "name" : "elastic_index",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "app-log"
+      }, {
+        "description" : "elastic server",
+        "name" : "elastic_url",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "https://localhost:8080"
+      } ]
+    }
+  },
   "parameterProviders" : { },
   "snapshotMetadata" : {
     "author" : "admin",
