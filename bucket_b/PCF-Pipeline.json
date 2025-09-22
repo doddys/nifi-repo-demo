@@ -408,12 +408,13 @@
         "el-cs-http-hosts" : "#{elastic_url}",
         "el-cs-charset" : "UTF-8",
         "el-cs-send-meta-header" : "true",
+        "el-cs-username" : "elastic",
         "el-cs-enable-compression" : "false",
         "el-cs-sniff-cluster-nodes" : "false",
         "el-cs-sniffer-interval" : "5 mins",
         "el-cs-sniffer-failure-delay" : "1 min",
         "el-cs-node-selector" : "ANY",
-        "authorization-scheme" : "NONE",
+        "authorization-scheme" : "BASIC",
         "el-cs-sniff-failure" : "false",
         "el-cs-sniffer-request-timeout" : "1 sec",
         "el-cs-connect-timeout" : "5000",
@@ -633,7 +634,7 @@
           "name" : "Grok Expression",
           "resourceDefinition" : {
             "cardinality" : "SINGLE",
-            "resourceTypes" : [ "TEXT", "FILE", "URL" ]
+            "resourceTypes" : [ "URL", "FILE", "TEXT" ]
           },
           "sensitive" : false
         },
@@ -651,7 +652,7 @@
           "name" : "Grok Pattern File",
           "resourceDefinition" : {
             "cardinality" : "SINGLE",
-            "resourceTypes" : [ "TEXT", "FILE", "URL" ]
+            "resourceTypes" : [ "URL", "FILE", "TEXT" ]
           },
           "sensitive" : false
         },
@@ -976,7 +977,7 @@
         "properties" : {
           "character-set" : "UTF-8",
           "File Size" : "0B",
-          "generate-ff-custom-text" : "Mon, Sep 30, 2024 09:22:14.688 [APP/PROC/WEB/0] OUT [DEBUG] 2024-09-30 09:22:14.688 [5ade,7663, 9a12] [http-nio-8080-exec-9] com.service.common.config.filter.LoggingFilter:70 - |||New GET request with URI: /credit-card/cin/1\t\nMon, Sep 30, 2024 09:22:14.584 [APP/PROC/WEB/0] OUT [DEBUG] 2024-09-30 09:22:14.584 [5ade,abf6, b567] [http-nio-8080-exec-8] com.service.common.config.aspect.LoggingAspect:81 - |||Generated response from com.bca.service.account.controller.AccountController#inquiryAccount(): {\"status\":200,\"headers\":{},\"body\":{\"error_schema\":{\"error_code\":\"ACC-1-000\",\"error_message\":{\"english\":\"Successful\",\"indonesian\":\"Sukses\"},\"http_status\":200},\"output_schema\":{\"total_accounts\":5,\"accounts\":[{\"account_number\":\"1\",\"account_name\":\"MYBCA OR TUJUH\",\"account_type\":{\"code\":\"1\",\"description\":\"BCA DOLLAR\"},\"currency\":\"USD\",\"open_indicator\":{},\"post_indicator\":{},\"dormant_status\":{},\"joint_account_type\":{\"code\":\"000\",\"description\":\"PEMILIK\"}},{\"account_number\":\"2\",\"account_name\":\"MYBCA OR TUJUH\",\"account_type\":{\"code\":\"2\",\"description\":\"TAHAPAN GOLD\"},\"currency\":\"IDR\",\"open_indicator\":{},\"post_indicator\":{},\"dormant_status\":{},\"joint_account_type\":{\"code\":\"000\",\"description\":\"PEMILIK\"}},{\"account_number\":\"83\",\"account_name\":\"MYBCA OR TUJUH\",\"account_type\":{\"code\":\"3\",\"description\":\"GIRO NONBANK (RUPIAH)\"},\"currency\":\"IDR\",\"open_indicator\":{},\"post_indicator\":{},\"dormant_status\":{},\"joint_account_type\":{\"code\":\"000\",\"description\":\"PEMILIK\"}},{\"account_number\":\"4\",\"account_name\":\"REK UAT 00000222692\",\"account_type\":{\"code\":\"4\",\"description\":\"BCA DOLLAR\"},\"currency\":\"SGD\",\"open_indicator\":{},\"post_indicator\":{},\"dormant_status\":{},\"joint_account_type\":{\"code\":\"000\",\"description\":\"PEMILIK\"}},{\"account_number\":\"5\",\"account_name\":\"MYBCA OR TUJUH\",\"account_type\":{\"code\":\"5\",\"description\":\"BCA DOLLAR\"},\"currency\":\"SGD\",\"open_indicator\":{},\"post_indicator\":{},\"dormant_status\":{},\"joint_account_type\":{\"code\":\"000\",\"description\":\"PEMILIK\"}}],\"epoch\":7}}}",
+          "generate-ff-custom-text" : "Mon, Sep 30, 2024 09:22:14.688 [APP/PROC/WEB/0] OUT [DEBUG] 2024-09-30 09:22:14.688 [5ade,7663, 9a12] [http-nio-8080-exec-9] com.service.common.config.filter.LoggingFilter:70 - |||New GET request with URI: /credit-card/cin/1\t\nMon, Sep 30, 2024 09:22:14.584 [APP/PROC/WEB/0] OUT [DEBUG] 2024-09-30 09:22:14.584 [5ade,abf6, b567] [http-nio-8080-exec-8] com.service.common.config.aspect.LoggingAspect:81 - |||Generated response from com.bca.service.account.controller.AccountController#inquiryAccount(): {\"status\":200,\"headers\":{},\"body\":{\"error_schema\":{\"error_code\":\"ACC-1-000\",\"error_message\":{\"english\":\"Successful\",\"indonesian\":\"Sukses\"},\"http_status\":200},\"output_schema\":{\"total_accounts\":5,\"accounts\":[{\"account_number\":\"1\",\"account_name\":\"MYBCA OR TUJUH\",\"account_type\":{\"code\":\"1\",\"description\":\"BCA DOLLAR\"},\"currency\":\"USD\",\"open_indicator\":{},\"post_indicator\":{},\"dormant_status\":{},\"joint_account_type\":{\"code\":\"000\",\"description\":\"PEMILIK\"}},{\"account_number\":\"2\",\"account_name\":\"MYBCA OR TUJUH\",\"account_type\":{\"code\":\"2\",\"description\":\"TAHAPAN GOLD\"},\"currency\":\"IDR\",\"open_indicator\":{},\"post_indicator\":{},\"dormant_status\":{},\"joint_account_type\":{\"code\":\"000\",\"description\":\"PEMILIK\"}},{\"account_number\":\"83\",\"account_name\":\"MYBCA OR TUJUH\",\"account_type\":{\"code\":\"3\",\"description\":\"GIRO NONBANK (RUPIAH)\"},\"currency\":\"IDR\",\"open_indicator\":{},\"post_indicator\":{},\"dormant_status\":{},\"joint_account_type\":{\"code\":\"000\",\"description\":\"PEMILIK\"}},{\"account_number\":\"4\",\"account_name\":\"REK UAT 00000222692\",\"account_type\":{\"code\":\"4\",\"description\":\"BCA DOLLAR\"},\"currency\":\"SGD\",\"open_indicator\":{},\"post_indicator\":{},\"dormant_status\":{},\"joint_account_type\":{\"code\":\"000\",\"description\":\"PEMILIK\"}},{\"account_number\":\"5\",\"account_name\":\"MYBCA OR TUJUH\",\"account_type\":{\"code\":\"5\",\"description\":\"BCA DOLLAR\"},\"currency\":\"SGD\",\"open_indicator\":{},\"post_indicator\":{},\"dormant_status\":{},\"joint_account_type\":{\"code\":\"000\",\"description\":\"PEMILIK\"}}],\"epoch\":7}}}\nMon, Sep 29, 2024 09:22:14.688 [APP/PROC/WEB/0] OUT [DEBUG] 2024-09-29 09:22:14.688 [5ade,7663, 9a12] [http-nio-8080-exec-9] com.service.common.config.filter.LoggingFilter:70 - |||New GET request with URI: /credit-card/cin/1\t\n",
           "Batch Size" : "1",
           "Unique FlowFiles" : "false",
           "Data Format" : "Text"
@@ -1386,6 +1387,7 @@
         "properties" : {
           "/time" : "format(toDate( /time_original, \"yyyy-MM-dd HH:mm:ss.SSS\", \"GMT+7:00\"), 'yyyy-MM-dd HH:mm:ss.SSS')",
           "/elastic_date" : "format(toDate( /time_original, \"yyyy-MM-dd HH:mm:ss.SSS\", \"GMT+7:00\"), 'yyyy.MM')",
+          "/elastic_index" : "concat('applog-',format(toDate( /time_original, \"yyyy-MM-dd HH:mm:ss.SSS\", \"GMT+7:00\"), 'yyyy.MM'))",
           "Record Writer" : "5bce6a9c-c7cf-3c20-8e0f-d856be842b27",
           "Record Reader" : "1b620587-c8ef-386c-805e-7d3e86b5e325",
           "Replacement Value Strategy" : "record-path-value"
@@ -1403,6 +1405,13 @@
             "dynamic" : true,
             "identifiesControllerService" : false,
             "name" : "/elastic_date",
+            "sensitive" : false
+          },
+          "/elastic_index" : {
+            "displayName" : "/elastic_index",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "/elastic_index",
             "sensitive" : false
           },
           "Record Writer" : {
@@ -1448,7 +1457,7 @@
         "backPressureObjectThreshold" : 10000,
         "bends" : [ {
           "x" : 280.0,
-          "y" : 37.0
+          "y" : -48.0
         } ],
         "componentType" : "CONNECTION",
         "destination" : {
@@ -1480,21 +1489,24 @@
         "backPressureDataSizeThreshold" : "1 GB",
         "backPressureObjectThreshold" : 10000,
         "bends" : [ {
-          "x" : -32.0,
-          "y" : 224.0
+          "x" : 56.0,
+          "y" : 168.0
+        }, {
+          "x" : 136.0,
+          "y" : 240.0
         } ],
         "componentType" : "CONNECTION",
         "destination" : {
           "comments" : "",
           "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-          "id" : "0b408e8b-1090-3937-8642-c1dc00a047ad",
-          "name" : "Funnel",
-          "type" : "FUNNEL"
+          "id" : "8b161a52-782c-3b8e-a6be-9e4a2694e1f8",
+          "name" : "RetryFlowFile",
+          "type" : "PROCESSOR"
         },
         "flowFileExpiration" : "0 sec",
         "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
         "identifier" : "2a168d53-401a-30db-8f8f-85dd4941c4dc",
-        "labelIndex" : 0,
+        "labelIndex" : 1,
         "loadBalanceCompression" : "DO_NOT_COMPRESS",
         "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
         "name" : "",
@@ -1702,8 +1714,8 @@
         "name" : "PCFOuputChannelsInputPort",
         "portFunction" : "STANDARD",
         "position" : {
-          "x" : -181.99996237089238,
-          "y" : -259.4999823852918
+          "x" : -192.0,
+          "y" : -432.0
         },
         "scheduledState" : "ENABLED",
         "type" : "INPUT_PORT"
@@ -1713,7 +1725,7 @@
         "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
         "height" : 264.0,
         "identifier" : "767070a6-ebb4-3c04-b0ce-c22456e673d0",
-        "label" : "Input : Flow file with json records\n\nProcess: \nImplement exception handling and retry \nKeep failed records for investigation\n- logic specific to elastic/target system\n\n\n\nOutput: Target System \n",
+        "label" : "Input : Flow file with json records\n\nProcess: \nImplement exception handling and retry \nKeep failed records for investigation\n- logic specific to elastic/target system\n\nuse index record path to assign index name\nfunction can not be used for this, final index name should be prepared previously\n\nOutput: Target System \n",
         "position" : {
           "x" : 424.0,
           "y" : -216.0
@@ -1839,8 +1851,9 @@
           "put-es-not_found-is-error" : "true",
           "put-es-record-error-writer" : "5bce6a9c-c7cf-3c20-8e0f-d856be842b27",
           "put-es-record-retain-at-timestamp-field" : "false",
-          "el-rest-fetch-index" : "index-${elastic_date}",
+          "el-rest-fetch-index" : "applog",
           "put-es-record-retain-id-field" : "false",
+          "put-es-record-index-record-path" : "/elastic_index",
           "put-es-record-reader" : "1b620587-c8ef-386c-805e-7d3e86b5e325",
           "put-es-record-bulk-error-groups" : "false"
         },
@@ -2061,11 +2074,22 @@
         "sensitive" : false,
         "value" : "app-log"
       }, {
+        "description" : "",
+        "name" : "elastic_password",
+        "provided" : false,
+        "sensitive" : true
+      }, {
         "description" : "elastic server",
         "name" : "elastic_url",
         "provided" : false,
         "sensitive" : false,
-        "value" : "https://localhost:8080"
+        "value" : "https://0768c6b5ee2d:9200"
+      }, {
+        "description" : "",
+        "name" : "elastic_user",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "elastic"
       } ]
     }
   },
