@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1758503561558,
+    "description" : "Template for telemetry processing",
+    "identifier" : "PCF-Pipeline",
+    "lastModifiedTimestamp" : 1758503561558,
+    "name" : "PCF Pipeline",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
