@@ -779,7 +779,10 @@
       }, {
         "backPressureDataSizeThreshold" : "1 GB",
         "backPressureObjectThreshold" : 10000,
-        "bends" : [ ],
+        "bends" : [ {
+          "x" : -552.0,
+          "y" : -136.0
+        } ],
         "componentType" : "CONNECTION",
         "destination" : {
           "comments" : "",
@@ -848,8 +851,8 @@
         "groupIdentifier" : "8ce8fee7-9c3c-3dae-abc3-3dc2309663de",
         "identifier" : "33a028d6-b19b-33ca-9f22-858e2891bb96",
         "position" : {
-          "x" : 472.0,
-          "y" : 24.0
+          "x" : -640.0,
+          "y" : 80.0
         }
       } ],
       "groupIdentifier" : "flow-contents-group",
@@ -860,10 +863,10 @@
         "groupIdentifier" : "8ce8fee7-9c3c-3dae-abc3-3dc2309663de",
         "height" : 256.0,
         "identifier" : "22f42a10-ea17-3f2f-af72-b4a46eb7320e",
-        "label" : "Input: Source Channel (Beats/HTTP)\n\nSupport Multiple Channel for a single message format.\nOutcome from this process group is flowfile containing records of json \nAllowed Processing:\n- Source format Validation before converting to JSON\n- Converting Source format to JSON\n\n\n\nAssign Channel related attributes here at flow file level\n\n\nOutput: Flow file with json records\n\n\nUse the following to test your GROK Expression\nhttps://grokconstructor.appspot.com/do/match#result\n",
+        "label" : "Input: Source Channel (Beats/HTTP)\n\nSupport Multiple Channel for a single message format.\nOutcome from this process group is flowfile containing records of json \nAllowed Processing:\n- Source format Validation before converting to JSON\n- Converting Source format to JSON\n- Error handling will be implemented here or send to different output port\n\n\nAssign Channel related attributes here at flow file level\n\n\nOutput: Flow file with json records\n\n\nUse the following to test your GROK Expression\nhttps://grokconstructor.appspot.com/do/match#result\n",
         "position" : {
           "x" : 0.0,
-          "y" : -352.0
+          "y" : -272.0
         },
         "style" : {
           "font-size" : "12px"
@@ -882,8 +885,8 @@
         "name" : "PCFInputChannelOutputPort",
         "portFunction" : "STANDARD",
         "position" : {
-          "x" : -216.0,
-          "y" : 280.0
+          "x" : -336.0,
+          "y" : 80.0
         },
         "scheduledState" : "ENABLED",
         "type" : "OUTPUT_PORT"
@@ -912,8 +915,8 @@
         "name" : "ConvertRecord",
         "penaltyDuration" : "30 sec",
         "position" : {
-          "x" : -325.9999623708924,
-          "y" : -34.49998238529179
+          "x" : -392.0,
+          "y" : -136.0
         },
         "properties" : {
           "Include Zero Record FlowFiles" : "true",
@@ -1715,7 +1718,7 @@
         "portFunction" : "STANDARD",
         "position" : {
           "x" : -192.0,
-          "y" : -432.0
+          "y" : -176.0
         },
         "scheduledState" : "ENABLED",
         "type" : "INPUT_PORT"
