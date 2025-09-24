@@ -552,7 +552,7 @@
       "retryCount" : 10,
       "runDurationMillis" : 0,
       "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "5 sec",
+      "schedulingPeriod" : "2 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
       "type" : "org.apache.nifi.processors.elasticsearch.PutElasticsearchRecord",
