@@ -17,14 +17,14 @@
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
-        "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-        "id" : "dc86665d-ed12-3fb4-b53c-2921b33c0990",
-        "name" : "PCFOuputChannelsInputPort",
+        "groupId" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+        "id" : "4bb58ce6-2f5f-36d5-9b67-08bb23dd4215",
+        "name" : "ElasticOutputChannelInputPort",
         "type" : "INPUT_PORT"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "e9dc214e-d122-380d-a35d-e78863765651",
+      "identifier" : "93ca7d44-2636-3441-afbb-00bd699b20f5",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -1052,7 +1052,222 @@
     }, {
       "comments" : "",
       "componentType" : "PROCESS_GROUP",
-      "connections" : [ ],
+      "connections" : [ {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "",
+          "groupId" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+          "id" : "aedf20a7-83c2-3272-89bf-c29192c8404e",
+          "name" : "Funnel",
+          "type" : "FUNNEL"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+        "identifier" : "18f662bd-7b3a-37d8-921e-20d33473dfc4",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "original" ],
+        "source" : {
+          "comments" : "",
+          "groupId" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+          "id" : "8fe58af4-5cf4-37aa-9220-984166092317",
+          "name" : "PutElasticsearchRecord",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 0
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "",
+          "groupId" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+          "id" : "98cd3db2-ad14-3970-9796-7fa358357b56",
+          "name" : "Funnel",
+          "type" : "FUNNEL"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+        "identifier" : "f67eca5b-64b3-3e25-9eb9-a0d66ad80109",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "successful" ],
+        "source" : {
+          "comments" : "",
+          "groupId" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+          "id" : "8fe58af4-5cf4-37aa-9220-984166092317",
+          "name" : "PutElasticsearchRecord",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 0
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "",
+          "groupId" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+          "id" : "43eb7da3-f8c6-3a76-807b-d6932309f688",
+          "name" : "Funnel",
+          "type" : "FUNNEL"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+        "identifier" : "f391b0ba-a3d1-35c4-ab6f-937bf4785e91",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "retries_exceeded" ],
+        "source" : {
+          "comments" : "",
+          "groupId" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+          "id" : "932caaa1-dfef-38b6-a6f8-9570ecccd919",
+          "name" : "RetryFlowFile",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 0
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "",
+          "groupId" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+          "id" : "8fe58af4-5cf4-37aa-9220-984166092317",
+          "name" : "PutElasticsearchRecord",
+          "type" : "PROCESSOR"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+        "identifier" : "6e68edd6-45cb-3171-825e-e6ce1ec42866",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "" ],
+        "source" : {
+          "groupId" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+          "id" : "4bb58ce6-2f5f-36d5-9b67-08bb23dd4215",
+          "name" : "ElasticOutputChannelInputPort",
+          "type" : "INPUT_PORT"
+        },
+        "zIndex" : 0
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "",
+          "groupId" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+          "id" : "932caaa1-dfef-38b6-a6f8-9570ecccd919",
+          "name" : "RetryFlowFile",
+          "type" : "PROCESSOR"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+        "identifier" : "7f7b839b-e33c-3a7b-8d2a-fdf1da3327a2",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "retry" ],
+        "source" : {
+          "comments" : "",
+          "groupId" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+          "id" : "8fe58af4-5cf4-37aa-9220-984166092317",
+          "name" : "PutElasticsearchRecord",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 0
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ {
+          "x" : 280.0,
+          "y" : 37.0
+        } ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "",
+          "groupId" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+          "id" : "8fe58af4-5cf4-37aa-9220-984166092317",
+          "name" : "PutElasticsearchRecord",
+          "type" : "PROCESSOR"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+        "identifier" : "4ede764a-4679-3ba2-8194-be3bd5c7e863",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "retry" ],
+        "source" : {
+          "comments" : "",
+          "groupId" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+          "id" : "932caaa1-dfef-38b6-a6f8-9570ecccd919",
+          "name" : "RetryFlowFile",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 0
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ {
+          "x" : 240.0,
+          "y" : 208.0
+        } ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "",
+          "groupId" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+          "id" : "932caaa1-dfef-38b6-a6f8-9570ecccd919",
+          "name" : "RetryFlowFile",
+          "type" : "PROCESSOR"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+        "identifier" : "602e3179-90d4-3a1f-99d6-3cd48ab7320b",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "failure", "errors" ],
+        "source" : {
+          "comments" : "",
+          "groupId" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+          "id" : "8fe58af4-5cf4-37aa-9220-984166092317",
+          "name" : "PutElasticsearchRecord",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 0
+      } ],
       "controllerServices" : [ ],
       "defaultBackPressureDataSizeThreshold" : "1 GB",
       "defaultBackPressureObjectThreshold" : 10000,
@@ -1060,32 +1275,382 @@
       "executionEngine" : "INHERITED",
       "flowFileConcurrency" : "UNBOUNDED",
       "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
-      "funnels" : [ ],
+      "funnels" : [ {
+        "componentType" : "FUNNEL",
+        "groupIdentifier" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+        "identifier" : "43eb7da3-f8c6-3a76-807b-d6932309f688",
+        "position" : {
+          "x" : 24.0,
+          "y" : 496.0
+        }
+      }, {
+        "componentType" : "FUNNEL",
+        "groupIdentifier" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+        "identifier" : "98cd3db2-ad14-3970-9796-7fa358357b56",
+        "position" : {
+          "x" : -664.0,
+          "y" : 24.0
+        }
+      }, {
+        "componentType" : "FUNNEL",
+        "groupIdentifier" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+        "identifier" : "aedf20a7-83c2-3272-89bf-c29192c8404e",
+        "position" : {
+          "x" : -525.0,
+          "y" : 334.5
+        }
+      } ],
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
-      "inputPorts" : [ ],
-      "labels" : [ ],
+      "inputPorts" : [ {
+        "allowRemoteAccess" : false,
+        "componentType" : "INPUT_PORT",
+        "concurrentlySchedulableTaskCount" : 1,
+        "groupIdentifier" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+        "identifier" : "4bb58ce6-2f5f-36d5-9b67-08bb23dd4215",
+        "name" : "ElasticOutputChannelInputPort",
+        "portFunction" : "STANDARD",
+        "position" : {
+          "x" : -192.0,
+          "y" : -264.0
+        },
+        "scheduledState" : "ENABLED",
+        "type" : "INPUT_PORT"
+      } ],
+      "labels" : [ {
+        "componentType" : "LABEL",
+        "groupIdentifier" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+        "height" : 264.0,
+        "identifier" : "88670804-3677-3653-97f8-2a43d80c2016",
+        "label" : "Input : Flow file with json records\n\nProcess: \nImplement exception handling and retry \nKeep failed records for investigation\n\n\nOutput: Target System \n",
+        "position" : {
+          "x" : 424.0,
+          "y" : -216.0
+        },
+        "style" : {
+          "font-size" : "12px"
+        },
+        "width" : 384.0,
+        "zIndex" : 0
+      } ],
       "maxConcurrentTasks" : 1,
       "name" : "Elastic Output Channels",
       "outputPorts" : [ ],
       "position" : {
-        "x" : 192.0,
-        "y" : 232.0
+        "x" : -312.0,
+        "y" : 240.0
       },
       "processGroups" : [ ],
-      "processors" : [ ],
+      "processors" : [ {
+        "autoTerminatedRelationships" : [ ],
+        "backoffMechanism" : "PENALIZE_FLOWFILE",
+        "bulletinLevel" : "WARN",
+        "bundle" : {
+          "artifact" : "nifi-elasticsearch-restapi-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.3.0.4.3.2.0-89"
+        },
+        "comments" : "",
+        "componentType" : "PROCESSOR",
+        "concurrentlySchedulableTaskCount" : 1,
+        "executionNode" : "ALL",
+        "groupIdentifier" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+        "identifier" : "8fe58af4-5cf4-37aa-9220-984166092317",
+        "maxBackoffPeriod" : "10 mins",
+        "name" : "PutElasticsearchRecord",
+        "penaltyDuration" : "30 sec",
+        "position" : {
+          "x" : -248.0,
+          "y" : -8.0
+        },
+        "properties" : {
+          "Max JSON Field String Length" : "20 MB",
+          "put-es-record-batch-size" : "100",
+          "put-es-record-index-op" : "index",
+          "put-es-output-error-responses" : "false",
+          "el-rest-client-service" : "57fe2f28-2175-3fdd-a316-41fcb820daf2",
+          "put-es-record-log-error-responses" : "false",
+          "put-es-not_found-is-error" : "true",
+          "put-es-record-error-writer" : "5bce6a9c-c7cf-3c20-8e0f-d856be842b27",
+          "put-es-record-retain-at-timestamp-field" : "false",
+          "el-rest-fetch-index" : "applog",
+          "put-es-record-retain-id-field" : "false",
+          "put-es-record-index-record-path" : "/elastic_index",
+          "put-es-record-reader" : "1b620587-c8ef-386c-805e-7d3e86b5e325",
+          "put-es-record-bulk-error-groups" : "false"
+        },
+        "propertyDescriptors" : {
+          "Max JSON Field String Length" : {
+            "displayName" : "Max JSON Field String Length",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Max JSON Field String Length",
+            "sensitive" : false
+          },
+          "put-es-record-at-timestamp-time-format" : {
+            "displayName" : "Time Format",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-record-at-timestamp-time-format",
+            "sensitive" : false
+          },
+          "put-es-record-batch-size" : {
+            "displayName" : "Batch Size",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-record-batch-size",
+            "sensitive" : false
+          },
+          "put-es-record-scripted-upsert-path" : {
+            "displayName" : "Scripted Upsert Record Path",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-record-scripted-upsert-path",
+            "sensitive" : false
+          },
+          "put-es-record-index-op" : {
+            "displayName" : "Index Operation",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-record-index-op",
+            "sensitive" : false
+          },
+          "put-es-record-type-record-path" : {
+            "displayName" : "Type Record Path",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-record-type-record-path",
+            "sensitive" : false
+          },
+          "put-es-record-at-timestamp-date-format" : {
+            "displayName" : "Date Format",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-record-at-timestamp-date-format",
+            "sensitive" : false
+          },
+          "put-es-output-error-responses" : {
+            "displayName" : "Output Error Responses",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-output-error-responses",
+            "sensitive" : false
+          },
+          "put-es-record-dynamic-templates-path" : {
+            "displayName" : "Dynamic Templates Record Path",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-record-dynamic-templates-path",
+            "sensitive" : false
+          },
+          "el-rest-client-service" : {
+            "displayName" : "Client Service",
+            "dynamic" : false,
+            "identifiesControllerService" : true,
+            "name" : "el-rest-client-service",
+            "sensitive" : false
+          },
+          "put-es-record-log-error-responses" : {
+            "displayName" : "Log Error Responses",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-record-log-error-responses",
+            "sensitive" : false
+          },
+          "put-es-not_found-is-error" : {
+            "displayName" : "Treat \"Not Found\" as Success",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-not_found-is-error",
+            "sensitive" : false
+          },
+          "put-es-record-error-writer" : {
+            "displayName" : "Result Record Writer",
+            "dynamic" : false,
+            "identifiesControllerService" : true,
+            "name" : "put-es-record-error-writer",
+            "sensitive" : false
+          },
+          "put-es-record-at-timestamp-timestamp-format" : {
+            "displayName" : "Timestamp Format",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-record-at-timestamp-timestamp-format",
+            "sensitive" : false
+          },
+          "put-es-record-id-path" : {
+            "displayName" : "ID Record Path",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-record-id-path",
+            "sensitive" : false
+          },
+          "put-es-record-retain-at-timestamp-field" : {
+            "displayName" : "Retain @timestamp (Record Path)",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-record-retain-at-timestamp-field",
+            "sensitive" : false
+          },
+          "el-rest-fetch-index" : {
+            "displayName" : "Index",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "el-rest-fetch-index",
+            "sensitive" : false
+          },
+          "put-es-record-index-op-path" : {
+            "displayName" : "Index Operation Record Path",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-record-index-op-path",
+            "sensitive" : false
+          },
+          "put-es-record-retain-id-field" : {
+            "displayName" : "Retain ID (Record Path)",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-record-retain-id-field",
+            "sensitive" : false
+          },
+          "put-es-record-script-path" : {
+            "displayName" : "Script Record Path",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-record-script-path",
+            "sensitive" : false
+          },
+          "el-rest-type" : {
+            "displayName" : "Type",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "el-rest-type",
+            "sensitive" : false
+          },
+          "put-es-record-at-timestamp" : {
+            "displayName" : "@timestamp Value",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-record-at-timestamp",
+            "sensitive" : false
+          },
+          "put-es-record-index-record-path" : {
+            "displayName" : "Index Record Path",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-record-index-record-path",
+            "sensitive" : false
+          },
+          "put-es-record-at-timestamp-path" : {
+            "displayName" : "@timestamp Record Path",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-record-at-timestamp-path",
+            "sensitive" : false
+          },
+          "put-es-record-reader" : {
+            "displayName" : "Record Reader",
+            "dynamic" : false,
+            "identifiesControllerService" : true,
+            "name" : "put-es-record-reader",
+            "sensitive" : false
+          },
+          "put-es-record-bulk-error-groups" : {
+            "displayName" : "Group Results by Bulk Error Type",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "put-es-record-bulk-error-groups",
+            "sensitive" : false
+          }
+        },
+        "retriedRelationships" : [ ],
+        "retryCount" : 10,
+        "runDurationMillis" : 0,
+        "scheduledState" : "ENABLED",
+        "schedulingPeriod" : "5 sec",
+        "schedulingStrategy" : "TIMER_DRIVEN",
+        "style" : { },
+        "type" : "org.apache.nifi.processors.elasticsearch.PutElasticsearchRecord",
+        "yieldDuration" : "1 sec"
+      }, {
+        "autoTerminatedRelationships" : [ ],
+        "backoffMechanism" : "PENALIZE_FLOWFILE",
+        "bulletinLevel" : "WARN",
+        "bundle" : {
+          "artifact" : "nifi-standard-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.3.0.4.3.2.0-89"
+        },
+        "comments" : "",
+        "componentType" : "PROCESSOR",
+        "concurrentlySchedulableTaskCount" : 1,
+        "executionNode" : "ALL",
+        "groupIdentifier" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+        "identifier" : "932caaa1-dfef-38b6-a6f8-9570ecccd919",
+        "maxBackoffPeriod" : "10 mins",
+        "name" : "RetryFlowFile",
+        "penaltyDuration" : "30 sec",
+        "position" : {
+          "x" : 456.0,
+          "y" : 104.0
+        },
+        "properties" : {
+          "penalize-retries" : "true",
+          "maximum-retries" : "3",
+          "Fail on Non-numerical Overwrite" : "false",
+          "reuse-mode" : "fail",
+          "retry-attribute" : "flowfile.retries"
+        },
+        "propertyDescriptors" : {
+          "penalize-retries" : {
+            "displayName" : "Penalize Retries",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "penalize-retries",
+            "sensitive" : false
+          },
+          "maximum-retries" : {
+            "displayName" : "Maximum Retries",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "maximum-retries",
+            "sensitive" : false
+          },
+          "Fail on Non-numerical Overwrite" : {
+            "displayName" : "Fail on Non-numerical Overwrite",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Fail on Non-numerical Overwrite",
+            "sensitive" : false
+          },
+          "reuse-mode" : {
+            "displayName" : "Reuse Mode",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "reuse-mode",
+            "sensitive" : false
+          },
+          "retry-attribute" : {
+            "displayName" : "Retry Attribute",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "retry-attribute",
+            "sensitive" : false
+          }
+        },
+        "retriedRelationships" : [ ],
+        "retryCount" : 10,
+        "runDurationMillis" : 0,
+        "scheduledState" : "ENABLED",
+        "schedulingPeriod" : "0 sec",
+        "schedulingStrategy" : "TIMER_DRIVEN",
+        "style" : { },
+        "type" : "org.apache.nifi.processors.standard.RetryFlowFile",
+        "yieldDuration" : "1 sec"
+      } ],
       "remoteProcessGroups" : [ ],
       "scheduledState" : "ENABLED",
-      "statelessFlowTimeout" : "1 min",
-      "versionedFlowCoordinates" : {
-        "branch" : "main",
-        "bucketId" : "bucket_c",
-        "flowId" : "Elastic-output-channel",
-        "registryUrl" : "",
-        "storageLocation" : "",
-        "systemType" : "REGISTRY_CLIENT",
-        "version" : "503cb23b0698920eae6ac4e3672144224d5c3d06"
-      }
+      "statelessFlowTimeout" : "1 min"
     }, {
       "comments" : "",
       "componentType" : "PROCESS_GROUP",
@@ -1484,611 +2049,6 @@
         "schedulingStrategy" : "TIMER_DRIVEN",
         "style" : { },
         "type" : "org.apache.nifi.processors.standard.UpdateRecord",
-        "yieldDuration" : "1 sec"
-      } ],
-      "remoteProcessGroups" : [ ],
-      "scheduledState" : "ENABLED",
-      "statelessFlowTimeout" : "1 min"
-    }, {
-      "comments" : "",
-      "componentType" : "PROCESS_GROUP",
-      "connections" : [ {
-        "backPressureDataSizeThreshold" : "1 GB",
-        "backPressureObjectThreshold" : 10000,
-        "bends" : [ {
-          "x" : 280.0,
-          "y" : -48.0
-        } ],
-        "componentType" : "CONNECTION",
-        "destination" : {
-          "comments" : "",
-          "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-          "id" : "e8f5d875-6466-33cb-8959-9a510e45c04a",
-          "name" : "PutElasticsearchRecord",
-          "type" : "PROCESSOR"
-        },
-        "flowFileExpiration" : "0 sec",
-        "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-        "identifier" : "fe1f074b-9f8c-3aec-b7eb-a82cabd56fcd",
-        "labelIndex" : 0,
-        "loadBalanceCompression" : "DO_NOT_COMPRESS",
-        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-        "name" : "",
-        "partitioningAttribute" : "",
-        "prioritizers" : [ ],
-        "selectedRelationships" : [ "retry" ],
-        "source" : {
-          "comments" : "",
-          "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-          "id" : "8b161a52-782c-3b8e-a6be-9e4a2694e1f8",
-          "name" : "RetryFlowFile",
-          "type" : "PROCESSOR"
-        },
-        "zIndex" : 0
-      }, {
-        "backPressureDataSizeThreshold" : "1 GB",
-        "backPressureObjectThreshold" : 10000,
-        "bends" : [ {
-          "x" : 56.0,
-          "y" : 168.0
-        }, {
-          "x" : 136.0,
-          "y" : 240.0
-        } ],
-        "componentType" : "CONNECTION",
-        "destination" : {
-          "comments" : "",
-          "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-          "id" : "8b161a52-782c-3b8e-a6be-9e4a2694e1f8",
-          "name" : "RetryFlowFile",
-          "type" : "PROCESSOR"
-        },
-        "flowFileExpiration" : "0 sec",
-        "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-        "identifier" : "2a168d53-401a-30db-8f8f-85dd4941c4dc",
-        "labelIndex" : 1,
-        "loadBalanceCompression" : "DO_NOT_COMPRESS",
-        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-        "name" : "",
-        "partitioningAttribute" : "",
-        "prioritizers" : [ ],
-        "selectedRelationships" : [ "failure", "errors" ],
-        "source" : {
-          "comments" : "",
-          "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-          "id" : "e8f5d875-6466-33cb-8959-9a510e45c04a",
-          "name" : "PutElasticsearchRecord",
-          "type" : "PROCESSOR"
-        },
-        "zIndex" : 0
-      }, {
-        "backPressureDataSizeThreshold" : "1 GB",
-        "backPressureObjectThreshold" : 10000,
-        "bends" : [ ],
-        "componentType" : "CONNECTION",
-        "destination" : {
-          "comments" : "",
-          "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-          "id" : "0b408e8b-1090-3937-8642-c1dc00a047ad",
-          "name" : "Funnel",
-          "type" : "FUNNEL"
-        },
-        "flowFileExpiration" : "0 sec",
-        "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-        "identifier" : "16c272b0-097c-3fa5-a228-bba11f62a5cc",
-        "labelIndex" : 0,
-        "loadBalanceCompression" : "DO_NOT_COMPRESS",
-        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-        "name" : "",
-        "partitioningAttribute" : "",
-        "prioritizers" : [ ],
-        "selectedRelationships" : [ "retries_exceeded" ],
-        "source" : {
-          "comments" : "",
-          "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-          "id" : "8b161a52-782c-3b8e-a6be-9e4a2694e1f8",
-          "name" : "RetryFlowFile",
-          "type" : "PROCESSOR"
-        },
-        "zIndex" : 0
-      }, {
-        "backPressureDataSizeThreshold" : "1 GB",
-        "backPressureObjectThreshold" : 10000,
-        "bends" : [ ],
-        "componentType" : "CONNECTION",
-        "destination" : {
-          "comments" : "",
-          "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-          "id" : "e36a2a94-4329-35ee-8174-89d083725a3d",
-          "name" : "Funnel",
-          "type" : "FUNNEL"
-        },
-        "flowFileExpiration" : "36000 sec",
-        "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-        "identifier" : "a84a6233-0425-3f56-8735-e3f204f5368a",
-        "labelIndex" : 0,
-        "loadBalanceCompression" : "DO_NOT_COMPRESS",
-        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-        "name" : "",
-        "partitioningAttribute" : "",
-        "prioritizers" : [ ],
-        "selectedRelationships" : [ "successful" ],
-        "source" : {
-          "comments" : "",
-          "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-          "id" : "e8f5d875-6466-33cb-8959-9a510e45c04a",
-          "name" : "PutElasticsearchRecord",
-          "type" : "PROCESSOR"
-        },
-        "zIndex" : 0
-      }, {
-        "backPressureDataSizeThreshold" : "1 GB",
-        "backPressureObjectThreshold" : 10000,
-        "bends" : [ ],
-        "componentType" : "CONNECTION",
-        "destination" : {
-          "comments" : "",
-          "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-          "id" : "8b161a52-782c-3b8e-a6be-9e4a2694e1f8",
-          "name" : "RetryFlowFile",
-          "type" : "PROCESSOR"
-        },
-        "flowFileExpiration" : "0 sec",
-        "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-        "identifier" : "ef2abefe-ed90-3e89-83db-fd123b02f3bb",
-        "labelIndex" : 0,
-        "loadBalanceCompression" : "DO_NOT_COMPRESS",
-        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-        "name" : "",
-        "partitioningAttribute" : "",
-        "prioritizers" : [ ],
-        "selectedRelationships" : [ "retry" ],
-        "source" : {
-          "comments" : "",
-          "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-          "id" : "e8f5d875-6466-33cb-8959-9a510e45c04a",
-          "name" : "PutElasticsearchRecord",
-          "type" : "PROCESSOR"
-        },
-        "zIndex" : 0
-      }, {
-        "backPressureDataSizeThreshold" : "1 GB",
-        "backPressureObjectThreshold" : 10000,
-        "bends" : [ ],
-        "componentType" : "CONNECTION",
-        "destination" : {
-          "comments" : "",
-          "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-          "id" : "66f585eb-e119-3d10-9225-dab9cd0a427f",
-          "name" : "Funnel",
-          "type" : "FUNNEL"
-        },
-        "flowFileExpiration" : "3600 sec",
-        "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-        "identifier" : "63d67283-853f-3bd1-9924-7a8d27fe7ed8",
-        "labelIndex" : 0,
-        "loadBalanceCompression" : "DO_NOT_COMPRESS",
-        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-        "name" : "",
-        "partitioningAttribute" : "",
-        "prioritizers" : [ ],
-        "selectedRelationships" : [ "original" ],
-        "source" : {
-          "comments" : "",
-          "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-          "id" : "e8f5d875-6466-33cb-8959-9a510e45c04a",
-          "name" : "PutElasticsearchRecord",
-          "type" : "PROCESSOR"
-        },
-        "zIndex" : 0
-      }, {
-        "backPressureDataSizeThreshold" : "1 GB",
-        "backPressureObjectThreshold" : 10000,
-        "bends" : [ ],
-        "componentType" : "CONNECTION",
-        "destination" : {
-          "comments" : "",
-          "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-          "id" : "e8f5d875-6466-33cb-8959-9a510e45c04a",
-          "name" : "PutElasticsearchRecord",
-          "type" : "PROCESSOR"
-        },
-        "flowFileExpiration" : "0 sec",
-        "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-        "identifier" : "f35eb06d-6429-3205-84fa-4ebf0b82341a",
-        "labelIndex" : 0,
-        "loadBalanceCompression" : "DO_NOT_COMPRESS",
-        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-        "name" : "",
-        "partitioningAttribute" : "",
-        "prioritizers" : [ ],
-        "selectedRelationships" : [ "" ],
-        "source" : {
-          "groupId" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-          "id" : "dc86665d-ed12-3fb4-b53c-2921b33c0990",
-          "name" : "PCFOuputChannelsInputPort",
-          "type" : "INPUT_PORT"
-        },
-        "zIndex" : 0
-      } ],
-      "controllerServices" : [ ],
-      "defaultBackPressureDataSizeThreshold" : "1 GB",
-      "defaultBackPressureObjectThreshold" : 10000,
-      "defaultFlowFileExpiration" : "0 sec",
-      "executionEngine" : "INHERITED",
-      "flowFileConcurrency" : "UNBOUNDED",
-      "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
-      "funnels" : [ {
-        "componentType" : "FUNNEL",
-        "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-        "identifier" : "66f585eb-e119-3d10-9225-dab9cd0a427f",
-        "position" : {
-          "x" : -650.944681661779,
-          "y" : 261.52884126466813
-        }
-      }, {
-        "componentType" : "FUNNEL",
-        "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-        "identifier" : "e36a2a94-4329-35ee-8174-89d083725a3d",
-        "position" : {
-          "x" : -664.0,
-          "y" : 24.0
-        }
-      }, {
-        "componentType" : "FUNNEL",
-        "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-        "identifier" : "0b408e8b-1090-3937-8642-c1dc00a047ad",
-        "position" : {
-          "x" : 24.0,
-          "y" : 496.0
-        }
-      } ],
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-      "inputPorts" : [ {
-        "allowRemoteAccess" : false,
-        "componentType" : "INPUT_PORT",
-        "concurrentlySchedulableTaskCount" : 1,
-        "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-        "identifier" : "dc86665d-ed12-3fb4-b53c-2921b33c0990",
-        "name" : "PCFOuputChannelsInputPort",
-        "portFunction" : "STANDARD",
-        "position" : {
-          "x" : -192.0,
-          "y" : -176.0
-        },
-        "scheduledState" : "DISABLED",
-        "type" : "INPUT_PORT"
-      } ],
-      "labels" : [ {
-        "componentType" : "LABEL",
-        "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-        "height" : 264.0,
-        "identifier" : "767070a6-ebb4-3c04-b0ce-c22456e673d0",
-        "label" : "Input : Flow file with json records\n\nProcess: \nImplement exception handling and retry \nKeep failed records for investigation\n- logic specific to elastic/target system\n\nuse index record path to assign index name\nfunction can not be used for this, final index name should be prepared previously\n\nOutput: Target System \n",
-        "position" : {
-          "x" : 424.0,
-          "y" : -216.0
-        },
-        "style" : {
-          "font-size" : "12px"
-        },
-        "width" : 384.0,
-        "zIndex" : 0
-      } ],
-      "maxConcurrentTasks" : 1,
-      "name" : "PCF Output Channels",
-      "outputPorts" : [ ],
-      "position" : {
-        "x" : -320.0,
-        "y" : 224.0
-      },
-      "processGroups" : [ ],
-      "processors" : [ {
-        "autoTerminatedRelationships" : [ ],
-        "backoffMechanism" : "PENALIZE_FLOWFILE",
-        "bulletinLevel" : "WARN",
-        "bundle" : {
-          "artifact" : "nifi-standard-nar",
-          "group" : "org.apache.nifi",
-          "version" : "2.3.0.4.3.2.0-89"
-        },
-        "comments" : "",
-        "componentType" : "PROCESSOR",
-        "concurrentlySchedulableTaskCount" : 1,
-        "executionNode" : "ALL",
-        "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-        "identifier" : "8b161a52-782c-3b8e-a6be-9e4a2694e1f8",
-        "maxBackoffPeriod" : "10 mins",
-        "name" : "RetryFlowFile",
-        "penaltyDuration" : "30 sec",
-        "position" : {
-          "x" : 456.0,
-          "y" : 104.0
-        },
-        "properties" : {
-          "penalize-retries" : "true",
-          "maximum-retries" : "3",
-          "Fail on Non-numerical Overwrite" : "false",
-          "reuse-mode" : "fail",
-          "retry-attribute" : "flowfile.retries"
-        },
-        "propertyDescriptors" : {
-          "penalize-retries" : {
-            "displayName" : "Penalize Retries",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "penalize-retries",
-            "sensitive" : false
-          },
-          "maximum-retries" : {
-            "displayName" : "Maximum Retries",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "maximum-retries",
-            "sensitive" : false
-          },
-          "Fail on Non-numerical Overwrite" : {
-            "displayName" : "Fail on Non-numerical Overwrite",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "Fail on Non-numerical Overwrite",
-            "sensitive" : false
-          },
-          "reuse-mode" : {
-            "displayName" : "Reuse Mode",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "reuse-mode",
-            "sensitive" : false
-          },
-          "retry-attribute" : {
-            "displayName" : "Retry Attribute",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "retry-attribute",
-            "sensitive" : false
-          }
-        },
-        "retriedRelationships" : [ ],
-        "retryCount" : 10,
-        "runDurationMillis" : 0,
-        "scheduledState" : "DISABLED",
-        "schedulingPeriod" : "0 sec",
-        "schedulingStrategy" : "TIMER_DRIVEN",
-        "style" : { },
-        "type" : "org.apache.nifi.processors.standard.RetryFlowFile",
-        "yieldDuration" : "1 sec"
-      }, {
-        "autoTerminatedRelationships" : [ ],
-        "backoffMechanism" : "PENALIZE_FLOWFILE",
-        "bulletinLevel" : "WARN",
-        "bundle" : {
-          "artifact" : "nifi-elasticsearch-restapi-nar",
-          "group" : "org.apache.nifi",
-          "version" : "2.3.0.4.3.2.0-89"
-        },
-        "comments" : "",
-        "componentType" : "PROCESSOR",
-        "concurrentlySchedulableTaskCount" : 1,
-        "executionNode" : "ALL",
-        "groupIdentifier" : "e0a9533b-6c82-3648-836a-50e209fa65b6",
-        "identifier" : "e8f5d875-6466-33cb-8959-9a510e45c04a",
-        "maxBackoffPeriod" : "10 mins",
-        "name" : "PutElasticsearchRecord",
-        "penaltyDuration" : "30 sec",
-        "position" : {
-          "x" : -248.0,
-          "y" : -8.0
-        },
-        "properties" : {
-          "Max JSON Field String Length" : "20 MB",
-          "put-es-record-batch-size" : "100",
-          "put-es-record-index-op" : "index",
-          "put-es-output-error-responses" : "false",
-          "el-rest-client-service" : "57fe2f28-2175-3fdd-a316-41fcb820daf2",
-          "put-es-record-log-error-responses" : "false",
-          "put-es-not_found-is-error" : "true",
-          "put-es-record-error-writer" : "5bce6a9c-c7cf-3c20-8e0f-d856be842b27",
-          "put-es-record-retain-at-timestamp-field" : "false",
-          "el-rest-fetch-index" : "applog",
-          "put-es-record-retain-id-field" : "false",
-          "put-es-record-index-record-path" : "/elastic_index",
-          "put-es-record-reader" : "1b620587-c8ef-386c-805e-7d3e86b5e325",
-          "put-es-record-bulk-error-groups" : "false"
-        },
-        "propertyDescriptors" : {
-          "Max JSON Field String Length" : {
-            "displayName" : "Max JSON Field String Length",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "Max JSON Field String Length",
-            "sensitive" : false
-          },
-          "put-es-record-at-timestamp-time-format" : {
-            "displayName" : "Time Format",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-record-at-timestamp-time-format",
-            "sensitive" : false
-          },
-          "put-es-record-batch-size" : {
-            "displayName" : "Batch Size",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-record-batch-size",
-            "sensitive" : false
-          },
-          "put-es-record-scripted-upsert-path" : {
-            "displayName" : "Scripted Upsert Record Path",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-record-scripted-upsert-path",
-            "sensitive" : false
-          },
-          "put-es-record-index-op" : {
-            "displayName" : "Index Operation",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-record-index-op",
-            "sensitive" : false
-          },
-          "put-es-record-type-record-path" : {
-            "displayName" : "Type Record Path",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-record-type-record-path",
-            "sensitive" : false
-          },
-          "put-es-record-at-timestamp-date-format" : {
-            "displayName" : "Date Format",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-record-at-timestamp-date-format",
-            "sensitive" : false
-          },
-          "put-es-output-error-responses" : {
-            "displayName" : "Output Error Responses",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-output-error-responses",
-            "sensitive" : false
-          },
-          "put-es-record-dynamic-templates-path" : {
-            "displayName" : "Dynamic Templates Record Path",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-record-dynamic-templates-path",
-            "sensitive" : false
-          },
-          "el-rest-client-service" : {
-            "displayName" : "Client Service",
-            "dynamic" : false,
-            "identifiesControllerService" : true,
-            "name" : "el-rest-client-service",
-            "sensitive" : false
-          },
-          "put-es-record-log-error-responses" : {
-            "displayName" : "Log Error Responses",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-record-log-error-responses",
-            "sensitive" : false
-          },
-          "put-es-not_found-is-error" : {
-            "displayName" : "Treat \"Not Found\" as Success",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-not_found-is-error",
-            "sensitive" : false
-          },
-          "put-es-record-error-writer" : {
-            "displayName" : "Result Record Writer",
-            "dynamic" : false,
-            "identifiesControllerService" : true,
-            "name" : "put-es-record-error-writer",
-            "sensitive" : false
-          },
-          "put-es-record-at-timestamp-timestamp-format" : {
-            "displayName" : "Timestamp Format",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-record-at-timestamp-timestamp-format",
-            "sensitive" : false
-          },
-          "put-es-record-id-path" : {
-            "displayName" : "ID Record Path",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-record-id-path",
-            "sensitive" : false
-          },
-          "put-es-record-retain-at-timestamp-field" : {
-            "displayName" : "Retain @timestamp (Record Path)",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-record-retain-at-timestamp-field",
-            "sensitive" : false
-          },
-          "el-rest-fetch-index" : {
-            "displayName" : "Index",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "el-rest-fetch-index",
-            "sensitive" : false
-          },
-          "put-es-record-index-op-path" : {
-            "displayName" : "Index Operation Record Path",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-record-index-op-path",
-            "sensitive" : false
-          },
-          "put-es-record-retain-id-field" : {
-            "displayName" : "Retain ID (Record Path)",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-record-retain-id-field",
-            "sensitive" : false
-          },
-          "put-es-record-script-path" : {
-            "displayName" : "Script Record Path",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-record-script-path",
-            "sensitive" : false
-          },
-          "el-rest-type" : {
-            "displayName" : "Type",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "el-rest-type",
-            "sensitive" : false
-          },
-          "put-es-record-at-timestamp" : {
-            "displayName" : "@timestamp Value",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-record-at-timestamp",
-            "sensitive" : false
-          },
-          "put-es-record-index-record-path" : {
-            "displayName" : "Index Record Path",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-record-index-record-path",
-            "sensitive" : false
-          },
-          "put-es-record-at-timestamp-path" : {
-            "displayName" : "@timestamp Record Path",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-record-at-timestamp-path",
-            "sensitive" : false
-          },
-          "put-es-record-reader" : {
-            "displayName" : "Record Reader",
-            "dynamic" : false,
-            "identifiesControllerService" : true,
-            "name" : "put-es-record-reader",
-            "sensitive" : false
-          },
-          "put-es-record-bulk-error-groups" : {
-            "displayName" : "Group Results by Bulk Error Type",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "put-es-record-bulk-error-groups",
-            "sensitive" : false
-          }
-        },
-        "retriedRelationships" : [ ],
-        "retryCount" : 10,
-        "runDurationMillis" : 0,
-        "scheduledState" : "DISABLED",
-        "schedulingPeriod" : "0 sec",
-        "schedulingStrategy" : "TIMER_DRIVEN",
-        "style" : { },
-        "type" : "org.apache.nifi.processors.elasticsearch.PutElasticsearchRecord",
         "yieldDuration" : "1 sec"
       } ],
       "remoteProcessGroups" : [ ],
