@@ -235,7 +235,7 @@
       "source" : {
         "groupId" : "flow-contents-group",
         "id" : "dc86665d-ed12-3fb4-b53c-2921b33c0990",
-        "name" : "PCFOuputChannelsInputPort",
+        "name" : "ElasticOutputChannelInputPort",
         "type" : "INPUT_PORT"
       },
       "zIndex" : 0
@@ -293,11 +293,11 @@
       "concurrentlySchedulableTaskCount" : 1,
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "dc86665d-ed12-3fb4-b53c-2921b33c0990",
-      "name" : "PCFOuputChannelsInputPort",
+      "name" : "ElasticOutputChannelInputPort",
       "portFunction" : "STANDARD",
       "position" : {
-        "x" : -181.99996237089238,
-        "y" : -259.4999823852918
+        "x" : -192.0,
+        "y" : -264.0
       },
       "scheduledState" : "ENABLED",
       "type" : "INPUT_PORT"
