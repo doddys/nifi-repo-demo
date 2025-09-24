@@ -1005,6 +1005,39 @@
         "backPressureObjectThreshold" : 10000,
         "bends" : [ {
           "x" : -416.0,
+          "y" : 48.0
+        } ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "",
+          "groupId" : "de0f2ca3-c5f2-313a-8c08-5be6880014a6",
+          "id" : "f5b35899-db2f-3d4a-9b32-b8dfbd9227de",
+          "name" : "Funnel",
+          "type" : "FUNNEL"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "de0f2ca3-c5f2-313a-8c08-5be6880014a6",
+        "identifier" : "d64b9947-51f0-3ec5-9be0-faca49af0ceb",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "failure" ],
+        "source" : {
+          "comments" : "",
+          "groupId" : "de0f2ca3-c5f2-313a-8c08-5be6880014a6",
+          "id" : "6763ab0f-fe8d-37ff-be44-ef0add2682e5",
+          "name" : "JoltTransformRecord",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 0
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ {
+          "x" : -416.0,
           "y" : -264.0
         } ],
         "componentType" : "CONNECTION",
@@ -1045,16 +1078,16 @@
           "name" : "Funnel",
           "type" : "FUNNEL"
         },
-        "flowFileExpiration" : "0 sec",
+        "flowFileExpiration" : "3600 sec",
         "groupIdentifier" : "de0f2ca3-c5f2-313a-8c08-5be6880014a6",
-        "identifier" : "bbeefec3-72b6-3c3e-950b-6b04a1470a09",
+        "identifier" : "a6eb13d8-eb6f-325f-8eec-4e72b2da131e",
         "labelIndex" : 0,
         "loadBalanceCompression" : "DO_NOT_COMPRESS",
         "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
         "name" : "",
         "partitioningAttribute" : "",
         "prioritizers" : [ ],
-        "selectedRelationships" : [ "original", "failure" ],
+        "selectedRelationships" : [ "original" ],
         "source" : {
           "comments" : "",
           "groupId" : "de0f2ca3-c5f2-313a-8c08-5be6880014a6",
@@ -1525,7 +1558,7 @@
         "registryUrl" : "",
         "storageLocation" : "git@github.com:doddys/nifi-repo-demo.git",
         "systemType" : "REGISTRY_CLIENT",
-        "version" : "824f6f55620b01be5ab6a3d0ee62f2d2582354f9"
+        "version" : "e0ea247db99ddc5f9e6f9ccf4a8e4e8e758651d4"
       }
     } ],
     "processors" : [ ],
