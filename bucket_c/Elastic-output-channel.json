@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1758689309233,
+    "description" : "",
+    "identifier" : "Elastic-output-channel",
+    "lastModifiedTimestamp" : 1758689309233,
+    "name" : "Elastic output channel",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
