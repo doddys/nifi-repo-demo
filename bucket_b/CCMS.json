@@ -1525,7 +1525,7 @@
         "registryUrl" : "",
         "storageLocation" : "git@github.com:doddys/nifi-repo-demo.git",
         "systemType" : "REGISTRY_CLIENT",
-        "version" : "503cb23b0698920eae6ac4e3672144224d5c3d06"
+        "version" : "824f6f55620b01be5ab6a3d0ee62f2d2582354f9"
       }
     } ],
     "processors" : [ ],
