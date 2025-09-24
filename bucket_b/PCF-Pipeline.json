@@ -17,6 +17,34 @@
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
+        "groupId" : "cbc35304-bc04-3216-9174-88596033c1f5",
+        "id" : "dc86665d-ed12-3fb4-b53c-2921b33c0990",
+        "name" : "ElasticOutputChannelInputPort",
+        "type" : "INPUT_PORT"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "98d2284f-03ac-3752-b074-776123b24c16",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "" ],
+      "source" : {
+        "groupId" : "de0f2ca3-c5f2-313a-8c08-5be6880014a6",
+        "id" : "f1549214-0d93-3d4c-93cc-b5bcd1ff14ff",
+        "name" : "PCFTransfromOutputPort",
+        "type" : "OUTPUT_PORT"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
         "groupId" : "de0f2ca3-c5f2-313a-8c08-5be6880014a6",
         "id" : "2870b1e9-cfd1-368d-ba8a-b6ae36b70503",
         "name" : "PCFTransformInputPort",
@@ -1021,6 +1049,43 @@
       "remoteProcessGroups" : [ ],
       "scheduledState" : "ENABLED",
       "statelessFlowTimeout" : "1 min"
+    }, {
+      "comments" : "",
+      "componentType" : "PROCESS_GROUP",
+      "connections" : [ ],
+      "controllerServices" : [ ],
+      "defaultBackPressureDataSizeThreshold" : "1 GB",
+      "defaultBackPressureObjectThreshold" : 10000,
+      "defaultFlowFileExpiration" : "0 sec",
+      "executionEngine" : "INHERITED",
+      "flowFileConcurrency" : "UNBOUNDED",
+      "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+      "funnels" : [ ],
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "cbc35304-bc04-3216-9174-88596033c1f5",
+      "inputPorts" : [ ],
+      "labels" : [ ],
+      "maxConcurrentTasks" : 1,
+      "name" : "Elastic Output Channels",
+      "outputPorts" : [ ],
+      "position" : {
+        "x" : -304.0,
+        "y" : 264.0
+      },
+      "processGroups" : [ ],
+      "processors" : [ ],
+      "remoteProcessGroups" : [ ],
+      "scheduledState" : "ENABLED",
+      "statelessFlowTimeout" : "1 min",
+      "versionedFlowCoordinates" : {
+        "branch" : "main",
+        "bucketId" : "bucket_c",
+        "flowId" : "Elastic-output-channel",
+        "registryUrl" : "",
+        "storageLocation" : "",
+        "systemType" : "REGISTRY_CLIENT",
+        "version" : "824f6f55620b01be5ab6a3d0ee62f2d2582354f9"
+      }
     }, {
       "comments" : "",
       "componentType" : "PROCESS_GROUP",
