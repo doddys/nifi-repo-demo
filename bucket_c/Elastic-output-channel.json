@@ -8,8 +8,8 @@
       "identifier" : "5bce6a9c-c7cf-3c20-8e0f-d856be842b27",
       "name" : "JsonRecordSetWriter"
     },
-    "69d5fab0-ab4b-3040-9210-63fc2360bfba" : {
-      "identifier" : "69d5fab0-ab4b-3040-9210-63fc2360bfba",
+    "57fe2f28-2175-3fdd-a316-41fcb820daf2" : {
+      "identifier" : "57fe2f28-2175-3fdd-a316-41fcb820daf2",
       "name" : "ElasticSearchClientServiceImpl"
     }
   },
@@ -27,33 +27,30 @@
     "connections" : [ {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
-      "bends" : [ {
-        "x" : 280.0,
-        "y" : 37.0
-      } ],
+      "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "e8f5d875-6466-33cb-8959-9a510e45c04a",
-        "name" : "PutElasticsearchRecord",
-        "type" : "PROCESSOR"
+        "id" : "5883448f-f667-3085-8c70-2fae2945fd93",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "fe1f074b-9f8c-3aec-b7eb-a82cabd56fcd",
+      "identifier" : "be6d82f6-32ef-3205-a2bc-75568bc0b1dd",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
       "name" : "",
       "partitioningAttribute" : "",
       "prioritizers" : [ ],
-      "selectedRelationships" : [ "retry" ],
+      "selectedRelationships" : [ "successful" ],
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "8b161a52-782c-3b8e-a6be-9e4a2694e1f8",
-        "name" : "RetryFlowFile",
+        "id" : "47d6176f-a079-323a-a70e-412482c98249",
+        "name" : "PutElasticsearchRecord",
         "type" : "PROCESSOR"
       },
       "zIndex" : 0
@@ -68,13 +65,13 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "8b161a52-782c-3b8e-a6be-9e4a2694e1f8",
+        "id" : "4af9c0dd-4679-3e58-969a-52fa2e14ac5f",
         "name" : "RetryFlowFile",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "2a168d53-401a-30db-8f8f-85dd4941c4dc",
+      "identifier" : "00412461-dd7a-3a64-950b-965fc3bc9f04",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -85,7 +82,7 @@
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "e8f5d875-6466-33cb-8959-9a510e45c04a",
+        "id" : "47d6176f-a079-323a-a70e-412482c98249",
         "name" : "PutElasticsearchRecord",
         "type" : "PROCESSOR"
       },
@@ -93,78 +90,21 @@
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
+      "bends" : [ {
+        "x" : 280.0,
+        "y" : 37.0
+      } ],
       "componentType" : "CONNECTION",
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "e36a2a94-4329-35ee-8174-89d083725a3d",
-        "name" : "Funnel",
-        "type" : "FUNNEL"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "a84a6233-0425-3f56-8735-e3f204f5368a",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "successful" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "e8f5d875-6466-33cb-8959-9a510e45c04a",
+        "id" : "47d6176f-a079-323a-a70e-412482c98249",
         "name" : "PutElasticsearchRecord",
         "type" : "PROCESSOR"
       },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "0b408e8b-1090-3937-8642-c1dc00a047ad",
-        "name" : "Funnel",
-        "type" : "FUNNEL"
-      },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "16c272b0-097c-3fa5-a228-bba11f62a5cc",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "retries_exceeded" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "8b161a52-782c-3b8e-a6be-9e4a2694e1f8",
-        "name" : "RetryFlowFile",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "8b161a52-782c-3b8e-a6be-9e4a2694e1f8",
-        "name" : "RetryFlowFile",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "ef2abefe-ed90-3e89-83db-fd123b02f3bb",
+      "identifier" : "940120f4-fd5a-347e-9350-88e297d16437",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -175,7 +115,37 @@
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "e8f5d875-6466-33cb-8959-9a510e45c04a",
+        "id" : "4af9c0dd-4679-3e58-969a-52fa2e14ac5f",
+        "name" : "RetryFlowFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "4af9c0dd-4679-3e58-969a-52fa2e14ac5f",
+        "name" : "RetryFlowFile",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c9666285-e539-33c2-aca3-bee9af13a7f4",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "retry" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "47d6176f-a079-323a-a70e-412482c98249",
         "name" : "PutElasticsearchRecord",
         "type" : "PROCESSOR"
       },
@@ -205,7 +175,7 @@
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "e8f5d875-6466-33cb-8959-9a510e45c04a",
+        "id" : "47d6176f-a079-323a-a70e-412482c98249",
         "name" : "PutElasticsearchRecord",
         "type" : "PROCESSOR"
       },
@@ -218,13 +188,43 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "e8f5d875-6466-33cb-8959-9a510e45c04a",
+        "id" : "5c9552af-ffc9-3bdd-81e1-0afd97410b46",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "7e4cd1bd-26b3-3345-8d3c-182eb7501543",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "retries_exceeded" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "4af9c0dd-4679-3e58-969a-52fa2e14ac5f",
+        "name" : "RetryFlowFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "47d6176f-a079-323a-a70e-412482c98249",
         "name" : "PutElasticsearchRecord",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "f35eb06d-6429-3205-84fa-4ebf0b82341a",
+      "identifier" : "36df67c2-5d2c-3e40-badf-1beeb62e7bf5",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -234,7 +234,7 @@
       "selectedRelationships" : [ "" ],
       "source" : {
         "groupId" : "flow-contents-group",
-        "id" : "dc86665d-ed12-3fb4-b53c-2921b33c0990",
+        "id" : "d8ede109-c6f5-3df0-82d9-47cd93d7da63",
         "name" : "ElasticOutputChannelInputPort",
         "type" : "INPUT_PORT"
       },
@@ -254,8 +254,8 @@
         "identifier" : "5bce6a9c-c7cf-3c20-8e0f-d856be842b27",
         "name" : "JsonRecordSetWriter"
       },
-      "69d5fab0-ab4b-3040-9210-63fc2360bfba" : {
-        "identifier" : "69d5fab0-ab4b-3040-9210-63fc2360bfba",
+      "57fe2f28-2175-3fdd-a316-41fcb820daf2" : {
+        "identifier" : "57fe2f28-2175-3fdd-a316-41fcb820daf2",
         "name" : "ElasticSearchClientServiceImpl"
       }
     },
@@ -264,15 +264,15 @@
     "funnels" : [ {
       "componentType" : "FUNNEL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "bf13de1e-b1ee-353d-9206-0ea33cc17a68",
+      "identifier" : "5c9552af-ffc9-3bdd-81e1-0afd97410b46",
       "position" : {
-        "x" : -525.0,
-        "y" : 334.5
+        "x" : 24.0,
+        "y" : 496.0
       }
     }, {
       "componentType" : "FUNNEL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "e36a2a94-4329-35ee-8174-89d083725a3d",
+      "identifier" : "5883448f-f667-3085-8c70-2fae2945fd93",
       "position" : {
         "x" : -664.0,
         "y" : 24.0
@@ -280,10 +280,10 @@
     }, {
       "componentType" : "FUNNEL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "0b408e8b-1090-3937-8642-c1dc00a047ad",
+      "identifier" : "bf13de1e-b1ee-353d-9206-0ea33cc17a68",
       "position" : {
-        "x" : 24.0,
-        "y" : 496.0
+        "x" : -525.0,
+        "y" : 334.5
       }
     } ],
     "identifier" : "flow-contents-group",
@@ -292,7 +292,7 @@
       "componentType" : "INPUT_PORT",
       "concurrentlySchedulableTaskCount" : 1,
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "dc86665d-ed12-3fb4-b53c-2921b33c0990",
+      "identifier" : "d8ede109-c6f5-3df0-82d9-47cd93d7da63",
       "name" : "ElasticOutputChannelInputPort",
       "portFunction" : "STANDARD",
       "position" : {
@@ -306,7 +306,7 @@
       "componentType" : "LABEL",
       "groupIdentifier" : "flow-contents-group",
       "height" : 264.0,
-      "identifier" : "767070a6-ebb4-3c04-b0ce-c22456e673d0",
+      "identifier" : "f2bb046f-41fc-3224-8d2a-4fcdceff9f1f",
       "label" : "Input : Flow file with json records\n\nProcess: \nImplement exception handling and retry \nKeep failed records for investigation\n\n\nOutput: Target System \n",
       "position" : {
         "x" : 424.0,
@@ -340,7 +340,7 @@
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "e8f5d875-6466-33cb-8959-9a510e45c04a",
+      "identifier" : "47d6176f-a079-323a-a70e-412482c98249",
       "maxBackoffPeriod" : "10 mins",
       "name" : "PutElasticsearchRecord",
       "penaltyDuration" : "30 sec",
@@ -353,7 +353,7 @@
         "put-es-record-batch-size" : "100",
         "put-es-record-index-op" : "index",
         "put-es-output-error-responses" : "false",
-        "el-rest-client-service" : "69d5fab0-ab4b-3040-9210-63fc2360bfba",
+        "el-rest-client-service" : "57fe2f28-2175-3fdd-a316-41fcb820daf2",
         "put-es-record-log-error-responses" : "false",
         "put-es-not_found-is-error" : "true",
         "put-es-record-error-writer" : "5bce6a9c-c7cf-3c20-8e0f-d856be842b27",
@@ -571,7 +571,7 @@
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "8b161a52-782c-3b8e-a6be-9e4a2694e1f8",
+      "identifier" : "4af9c0dd-4679-3e58-969a-52fa2e14ac5f",
       "maxBackoffPeriod" : "10 mins",
       "name" : "RetryFlowFile",
       "penaltyDuration" : "30 sec",
