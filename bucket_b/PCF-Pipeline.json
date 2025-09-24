@@ -634,7 +634,7 @@
           "name" : "Grok Expression",
           "resourceDefinition" : {
             "cardinality" : "SINGLE",
-            "resourceTypes" : [ "URL", "FILE", "TEXT" ]
+            "resourceTypes" : [ "FILE", "TEXT", "URL" ]
           },
           "sensitive" : false
         },
@@ -652,7 +652,7 @@
           "name" : "Grok Pattern File",
           "resourceDefinition" : {
             "cardinality" : "SINGLE",
-            "resourceTypes" : [ "URL", "FILE", "TEXT" ]
+            "resourceTypes" : [ "FILE", "TEXT", "URL" ]
           },
           "sensitive" : false
         },
@@ -1049,6 +1049,43 @@
       "remoteProcessGroups" : [ ],
       "scheduledState" : "ENABLED",
       "statelessFlowTimeout" : "1 min"
+    }, {
+      "comments" : "",
+      "componentType" : "PROCESS_GROUP",
+      "connections" : [ ],
+      "controllerServices" : [ ],
+      "defaultBackPressureDataSizeThreshold" : "1 GB",
+      "defaultBackPressureObjectThreshold" : 10000,
+      "defaultFlowFileExpiration" : "0 sec",
+      "executionEngine" : "INHERITED",
+      "flowFileConcurrency" : "UNBOUNDED",
+      "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+      "funnels" : [ ],
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c0604604-3248-3bd1-9105-a9a08b84ad91",
+      "inputPorts" : [ ],
+      "labels" : [ ],
+      "maxConcurrentTasks" : 1,
+      "name" : "Elastic Output Channels",
+      "outputPorts" : [ ],
+      "position" : {
+        "x" : 192.0,
+        "y" : 232.0
+      },
+      "processGroups" : [ ],
+      "processors" : [ ],
+      "remoteProcessGroups" : [ ],
+      "scheduledState" : "ENABLED",
+      "statelessFlowTimeout" : "1 min",
+      "versionedFlowCoordinates" : {
+        "branch" : "main",
+        "bucketId" : "bucket_c",
+        "flowId" : "Elastic-output-channel",
+        "registryUrl" : "",
+        "storageLocation" : "",
+        "systemType" : "REGISTRY_CLIENT",
+        "version" : "503cb23b0698920eae6ac4e3672144224d5c3d06"
+      }
     }, {
       "comments" : "",
       "componentType" : "PROCESS_GROUP",
@@ -1720,7 +1757,7 @@
           "x" : -192.0,
           "y" : -176.0
         },
-        "scheduledState" : "ENABLED",
+        "scheduledState" : "DISABLED",
         "type" : "INPUT_PORT"
       } ],
       "labels" : [ {
@@ -1816,7 +1853,7 @@
         "retriedRelationships" : [ ],
         "retryCount" : 10,
         "runDurationMillis" : 0,
-        "scheduledState" : "ENABLED",
+        "scheduledState" : "DISABLED",
         "schedulingPeriod" : "0 sec",
         "schedulingStrategy" : "TIMER_DRIVEN",
         "style" : { },
@@ -2047,7 +2084,7 @@
         "retriedRelationships" : [ ],
         "retryCount" : 10,
         "runDurationMillis" : 0,
-        "scheduledState" : "ENABLED",
+        "scheduledState" : "DISABLED",
         "schedulingPeriod" : "0 sec",
         "schedulingStrategy" : "TIMER_DRIVEN",
         "style" : { },
@@ -2071,16 +2108,16 @@
       "inheritedParameterContexts" : [ ],
       "name" : "POCEnv",
       "parameters" : [ {
+        "description" : "",
+        "name" : "elastic_password",
+        "provided" : false,
+        "sensitive" : true
+      }, {
         "description" : "elastic index prefix",
         "name" : "elastic_index",
         "provided" : false,
         "sensitive" : false,
         "value" : "app-log"
-      }, {
-        "description" : "",
-        "name" : "elastic_password",
-        "provided" : false,
-        "sensitive" : true
       }, {
         "description" : "elastic server",
         "name" : "elastic_url",
