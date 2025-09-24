@@ -102,7 +102,7 @@
         "name" : "Funnel",
         "type" : "FUNNEL"
       },
-      "flowFileExpiration" : "0 sec",
+      "flowFileExpiration" : "3600 sec",
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "a84a6233-0425-3f56-8735-e3f204f5368a",
       "labelIndex" : 0,
@@ -192,7 +192,7 @@
         "name" : "Funnel",
         "type" : "FUNNEL"
       },
-      "flowFileExpiration" : "0 sec",
+      "flowFileExpiration" : "3600 sec",
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "ff6fc164-9310-32ac-88eb-b4eefe031ab5",
       "labelIndex" : 0,
